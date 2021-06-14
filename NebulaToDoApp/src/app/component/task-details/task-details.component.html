@@ -1,0 +1,66 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/af-2.3.5/datatables.min.css" />
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/af-2.3.5/datatables.min.js"></script>
+
+
+<div class="bootstrap-wrapper">
+    <div class="container text- mt">
+        <mat-toolbar color="primary">
+            <button mat-raised-button routerLink="/createtask">Create Task</button>
+        </mat-toolbar>
+        <div class="form-group">
+            <mat-card>
+                
+                <br><br>
+                <h4>Completed Task</h4>
+                <mat-card-content>
+                    <!-- form?? -->
+                    <table class="table">
+                        <tr ngclass="btn-primary">
+                            <th class="tbl1">Task Name</th>
+                            <th class="tbl1">Due Date</th>
+                            <th class="tbl1">Description</th>
+                            <th class="tbl1">Completed Date</th>
+                            <th class="tbl1">Entered Date</th>
+                            <th class="tbl1">Delete</th>
+                        </tr>
+                        <!-- //*ngFor="let task of allCompletedTask" -->
+                        <tr *ngFor="let pd of taskService.taskList">
+                            <td class="tbl1">{{pd.taskName}}</td>
+                            <td class="tbl1">{{pd.dueDate}}</td>
+                            <td class="tbl1">{{pd.description}}</td>
+                            <td class="tbl1">{{pd.completedDate}}</td>
+                            <td class="tbl1">{{pd.enteredDate}}</td>
+                            <td class="tbl1">
+                                <button type="submit" class="btn btn-primary btn-sm" >Submit</button>
+                            </td> 
+                        </tr>
+                    </table>
+                </mat-card-content>
+
+                <br><br>
+                <h4>Unfinished Task</h4>
+                <mat-card-content>
+                    <table class="table">
+                        <tr ngclass="btn-primary">
+                            <th class="tbl1">Task Name</th>
+                            <th class="tbl1">Due Date</th>
+                            <th class="tbl1">Description</th>
+                            <th class="tbl1">Entered Date</th>
+                            <th class="tbl1">Delete</th>
+                        </tr>
+                        <tr *ngFor="let pd of taskService.taskList">
+                            <td class="tbl1">{{pd.taskName}}</td>
+                            <td class="tbl1">{{pd.dueDate}}</td>
+                            <td class="tbl1">{{pd.description}}</td>
+                            <td class="tbl1">{{pd.enteredDate}}</td>
+                            <td class="tbl1">
+                                <button type="submit" class="btn btn-primary btn-sm" >Submit</button>
+                            </td> 
+                        </tr>
+                    </table>
+                </mat-card-content>
+
+            </mat-card>
+        </div>
+    </div>
+</div>

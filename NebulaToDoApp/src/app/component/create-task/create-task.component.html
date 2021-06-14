@@ -1,0 +1,25 @@
+    <form novalidate #taskForm="ngForm" (submit)="onSubmit(taskForm)">
+        <div class="form-wrapper">
+            <label>Task Name</label>
+            <input placeholder="Task Name" name="taskName"
+            #taskName="ngModel" [(ngModel)]="taskService.formData.taskName" required>
+        </div>
+
+        <div class="form-wrapper">
+            <label>Due Date</label>
+            <input placeholder="Due Date" name="dueDate" type="datetime-local"
+            #dueDate="ngModel" [(ngModel)]="taskService.formData.dueDate" required>
+        </div>
+
+        <div class="form-wrapper">
+            <label>Description</label>
+            <input placeholder="Description (optional)" name="description"
+            #description="ngModel" [(ngModel)]="taskService.formData.description">
+        </div>
+
+        <div class="form-wrapper">
+            <button type="submit" class="btn btn-primary btn-sm" [disabled]="taskForm.invalid">Submit</button>
+        </div>
+
+
+    </form>
